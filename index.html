@@ -457,7 +457,7 @@ footer.foot{border-top:1px solid var(--line);padding:40px 0 100px}
 (function(){
   /* Cole aqui a URL /exec do Apps Script "Tyar | Leads LP → Omie" e o mesmo LP_SEGREDO das propriedades do script.
      Vazio = o formulário só dispara os eventos do GTM. */
-  var CONFIG = { endpoint: "", k: "" };
+  var CONFIG = { endpoint: "https://script.google.com/macros/s/AKfycbwhaIyCX43Co0xUNtQmTCmi9JwW7FWXgBrpcCsmf1kTWadlC2XqDTQSoWMe8S95kGJf/exec", k: "ASuBliZ54w66BVbDwYbREhEA" };
 
   ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","gclid"].forEach(function(k){
     var v = new URLSearchParams(location.search).get(k);

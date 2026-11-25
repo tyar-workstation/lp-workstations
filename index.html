@@ -249,7 +249,7 @@ footer.foot{border-top:1px solid var(--line);padding:40px 0 100px}
   .mobilebar .btn{width:100%}
 }
 </style>
-</head>
+<style>.panel h2{margin-bottom:20px}/* ajustes 25/11: dobras com fundos alternados, clientes estáticos */section:has(.duo),section:has(.steps){background:linear-gradient(180deg,#14111d,#100e17);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:clamp(64px,8vw,112px)!important}section:has(.cfgs),section:has(.faq-wrap){padding-top:clamp(64px,8vw,112px)!important}section:has(.duo) .stagebox::before{opacity:.8}section:has(.steps) .step::before{background:#5a4f74}section:has(.pub){background:#f4f0f9;color:#17121f;padding-top:clamp(64px,8vw,112px)!important}section:has(.pub) .mono{color:#7a3fa6}section:has(.pub) .sec-head p,section:has(.pub) .pub p{color:#514865}section:has(.pub) .pub>div{background:#fff;border-color:#e3d9ee;box-shadow:0 18px 40px -28px rgba(70,25,100,.45)}section:has(.pub) .pub h3{color:#17121f}section:has(.pub) .sectors span{background:#fff;border-color:#ddd2ea;color:#2b2338}section:has(.pub) .grad{background:linear-gradient(120deg,#9a4fd0,#5d2489);-webkit-background-clip:text;background-clip:text}section:has(.pub) .btn:not(.hot){color:#2b2338;border-color:#cdbfdc;background:#fff}.clients{background:#0e0c14}.clients .wrap{padding-top:22px;padding-bottom:22px}.marquee{-webkit-mask-image:none;mask-image:none;overflow:visible}.marquee .track{animation:none;width:auto;flex-wrap:wrap;gap:6px 26px;justify-content:flex-start;align-items:center}.logo-tile:has(img[aria-hidden]){display:none}.logo-tile{width:104px;height:56px;border-radius:0;background:transparent;filter:none;opacity:1;overflow:visible}.logo-tile img{filter:grayscale(1) invert(1) contrast(1.6) brightness(.9);mix-blend-mode:screen}.logo-tile:has(img[alt="Museu do Futebol"]){display:none}.logo-tile:hover{opacity:1;transform:none}</style></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N52R2WH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -293,13 +293,13 @@ footer.foot{border-top:1px solid var(--line);padding:40px 0 100px}
       <div class="panel" id="orcamento">
         <form id="lead" novalidate>
           <h2>Solicite seu orçamento</h2>
-          <p class="ps">Leva 30 segundos. Um especialista responde em até 1 dia útil.</p>
+          
           <div class="fields">
             <div class="field full"><label for="nome">Nome</label><input type="text" id="nome" name="nome" autocomplete="name" required></div>
             <div class="field full">
               <label for="email">E-mail da empresa ou instituição</label>
               <input type="email" id="email" name="email" autocomplete="email" required placeholder="voce@empresa.com.br">
-              <span class="hint" id="emailHint" hidden>Se tiver, use o e-mail da empresa ou instituição: o orçamento sai mais rápido.</span>
+              
             </div>
             <div class="field"><label for="telefone">WhatsApp</label><input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="tel" required placeholder="(11) 99999-9999"></div>
             <div class="field"><label for="empresa">Empresa ou instituição</label><input type="text" id="empresa" name="empresa" autocomplete="organization" required></div>
@@ -476,7 +476,7 @@ footer.foot{border-top:1px solid var(--line);padding:40px 0 100px}
     if (/\.(edu|gov|org|mil|jus|leg|mp)(\.br)?$/.test(dom) || /(^|\.)(usp|unesp|unicamp|ufscar|unifesp|ipen|ipt|embrapa|fiocruz|inpe|cnpem)\.br$/.test(dom) || /(^|\.)(uf[a-z]{1,4}|if[a-z]{1,4})\.(edu\.)?br$/.test(dom)) return "institucional";
     return "corporativo";
   }
-  email.addEventListener("blur", function(){ hint.hidden = tipoEmail(email.value.trim()) !== "pessoal"; });
+  email.addEventListener("blur", function(){ if(hint)hint.hidden = tipoEmail(email.value.trim()) !== "pessoal"; });
 
   var comecou = false;
   form.addEventListener("focusin", function(){ if (!comecou){ comecou = true; dataLayer.push({event:"lead_inicio"}); } });
